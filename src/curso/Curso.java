@@ -2,11 +2,33 @@ package curso;
 
 import java.util.ArrayList;
 import java.util.Hashtable; //Las importaciones siempre son por debajo del package
+import java.util.Scanner;
 
-public class Curso {
+public class Curso { // La clase tiene el mismo nombre del Paquete (package), esta es la clase principal
 
     
     public static void main(String[] args) {
+        // Los OBJETOS son una INSTANCIACION en una clase
+        //Primera One = new Primera(); // Primero tiene que tener alusion al nombre de la Clase (Primera), luego, nombre del Objeto, new y nuevamente el nombre de la Clase ();
+        // Podemos acceder a multiples clases que vienen por defecto por java o por librerias, apis, sucecion de clases
+        // *** Cuando se ocupa un Constructor se colocan los parametros dentro de los parentesis ***
+        //System.out.println(One.nombre); // Para recuperar los datos de las Clases se coloca el nombre del Objeto creado, punto . , nombre del parametro que necesito
+        
+        //Primera One = new Primera(1.85d, "Diego Lorca"); // Al tener un CONSTRUCTOR, se agregan directamente los datos dentro del parentesis
+        //System.out.println(One.edad);// Se puede invocar todos los parametros de una Clase, tanto los que no estan asignados en el Constructor como las variables de valor absoluto
+        
+        // Para invocar METODOS se debe asignar los valores que solicita... con Metodo String
+        //System.out.println(One.saludar("Weeeenaaa ", "Chorooo!!!")); // Dentro de los parentesis, se deben colocar los datos solicitados del METODO
+        
+        // Para invocar METODOS se debe asignar los valores que solicita... con Metodo Void
+        //One.despedir("Adios ", "Chorooo!!!"); // Dentro de los parentesis, se deben colocar los datos solicitados del METODO
+        
+        // En el caso de las HERENCIAS se instancia la Clase que se va a ocupar
+        Segunda Two = new Segunda();
+        Tercera Three = new Tercera();
+        //Two.accion(); // Como ya esta especificado el print en las clases correspondientes, solo se debe invocar 
+        //Three.accion();
+        //System.out.println(Two.nombreCompleto); // Ademas de los parametros y metodos creados en la Clase Segunda, tambien se pueden invocar los parametros y metodos de la Clase Heredada (Primera)
         // COMENTARIOS de una linea
         /*
          Comentarios de varias lineas
@@ -274,12 +296,46 @@ public class Curso {
         //System.out.println(Dias.isEmpty()); // Ver si una lista esta vacia - False cuando esta con contenido, True cuando esta vacio
         //ArrayList<String> Semana = new ArrayList<String>(Dias);// Copiar ArrayList a otro ArrayList diferente
         //System.out.println(Semana);
-        String[] Semana = new String[Dias.size()];//Para convertir el ArrayList a un Array o un String
-        Dias.toArray(Semana); //Pasa ArrayList al Array
-        System.out.println(Semana[0]);
+        //String[] Semana = new String[Dias.size()];//Para convertir el ArrayList a un Array o un String
+        //Dias.toArray(Semana); //Pasa ArrayList al Array
+        // System.out.println(Semana[0]);
         // CLASES Funcionamiento, Los modificadores, Creación de nuevas clases, Propiedades, Métodos, Constructor 
-  
+        //Java es orientada a objeto, en este punto esta especificado en el Objeto. La Clase es como el MOLDE
+       /* CLASE MASCOTA {
+                    PROPIEDADES(variables) // ESTAS SE DEFINEN UNA SOLA VEZ
+                            - Nombre
+                            - Tamaño
+                            - Edad
+                    METODOS(funciones)
+                            - Mostrar el nombre de la mascota
+                            - Evaluar el tamaño
+                            - Actualizar cada año la edad de la mascota
+                            - Solicitar mascota
+                            - Acciones de las mascotas
+        }
+          OBJETO GATO { //  INSTANCIACION E INSERCION DE DATOS, estos OBJETOS pueden reutilizar las CLASES
+                            - Firulais
+                            - 35
+                            - 4
+        }*/
+       
         // OBJETOS Instanciación, Evocar un objeto, Herencia, Polimorfismo, Final y Static
+        
+        final int doscientos = 200; // FINAL es una constante INMUTABLE, por lo cual no se puede modificar el valor asignado - Ocupar en valores fijos
+        //DOS = 100;
+        //System.out.println(doscientos);
+        // STATIC nos permite capturar un valor desde cualquier lugar, se coloca primero la Clase y luego la variable - No ocupar mucho
+        //System.out.println(Primera.trescientos);
+        
+        // LEER DEL TECLADO
+        System.out.println("Escribir un nombre: ");
+        Scanner lectura = new Scanner(System.in);
+        String nombre = lectura.next();
+        System.out.println("Escribir tu edad: ");
+        int edad = lectura.nextInt();
+        System.out.println("Escribir tu estatura: ");
+        double estatura = lectura.nextDouble();
+        System.out.println("Tu nombre es " + nombre + " y tienes " + edad + " años y mides " + estatura + " cm.");
     }
     
 }
